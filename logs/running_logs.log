@@ -1,0 +1,121 @@
+[2024-05-23 13:15:45,647: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-23 13:15:45,648: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-23 13:15:45,648: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-23 13:15:45,648: INFO: common: created directory at: artifacts]
+[2024-05-23 13:15:45,648: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-23 13:21:38,927: INFO: data_ingestion: artifacts/data_ingestion/RainTrainH.zip download! with following info: 
+Date: Thu, 23 May 2024 17:15:44 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Tue, 05 Dec 2017 14:20:18 GMT
+ETag: "45e0aef3-55f9888c78c80"
+Accept-Ranges: bytes
+Content-Length: 1172352755
+Content-Type: application/zip
+Connection: close
+
+]
+[2024-05-23 13:21:39,412: ERROR: main: HTTP Error 403: Forbidden]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file(data_ingestion_config.train_rain_L_URL, data_ingestion_config.local_train_L_path)
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_ingestion.py", line 18, in download_file
+    filename, headers = request.urlretrieve(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 241, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 525, in open
+    response = meth(req, response)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+[2024-05-23 13:25:05,212: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-23 13:25:05,213: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-23 13:25:05,214: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-23 13:25:05,214: INFO: common: created directory at: artifacts]
+[2024-05-23 13:25:05,214: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-23 13:25:05,693: ERROR: main: HTTP Error 403: Forbidden]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file(data_ingestion_config.train_rain_L_URL, data_ingestion_config.local_train_L_path)
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_ingestion.py", line 18, in download_file
+    filename, headers = request.urlretrieve(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 241, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 525, in open
+    response = meth(req, response)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+[2024-05-23 13:25:24,358: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-23 13:25:24,359: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-23 13:25:24,359: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-23 13:25:24,359: INFO: common: created directory at: artifacts]
+[2024-05-23 13:25:24,359: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-23 13:25:28,463: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-23 13:26:23,625: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-23 13:26:23,625: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-23 13:26:23,626: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-23 13:26:23,626: INFO: common: created directory at: artifacts]
+[2024-05-23 13:26:23,626: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-23 13:26:27,739: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-23 13:26:55,091: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-23 13:26:55,091: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-23 13:26:55,092: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-23 13:26:55,092: INFO: common: created directory at: artifacts]
+[2024-05-23 13:26:55,092: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-23 13:26:55,577: ERROR: main: HTTP Error 403: Forbidden]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_file(data_ingestion_config.train_rain_L_URL, data_ingestion_config.local_train_L_path)
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_ingestion.py", line 18, in download_file
+    filename, headers = request.urlretrieve(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 241, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 525, in open
+    response = meth(req, response)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+[2024-05-23 13:29:22,820: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-23 13:29:22,821: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-23 13:29:22,821: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-23 13:29:22,821: INFO: common: created directory at: artifacts]
+[2024-05-23 13:29:22,821: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-23 13:29:23,315: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]

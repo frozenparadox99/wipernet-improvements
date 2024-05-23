@@ -1,1 +1,10 @@
 artifacts_root: artifacts
+
+data_ingestion:
+    root_dir: artifacts/data_ingestion
+    train_rain_H_URL: http://www.icst.pku.edu.cn/struct/att/RainTrainH.zip
+    train_rain_L_URL: http://www.icst.pku.edu.cn/struct/att/RainTrainL.zip 
+    local_train_H_path: artifacts/data_ingestion/RainTrainH.zip
+    local_train_L_path: artifacts/data_ingestion/RainTrainL.zip
+    unzip_dir_train_H: artifacts/data_ingestion/
+    unzip_dir_train_L: artifacts/data_ingestion/
