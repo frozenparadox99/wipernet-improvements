@@ -29,6 +29,7 @@ class ConfigurationManager:
             local_train_L_path=config.local_train_L_path,
             unzip_dir_train_H=config.unzip_dir_train_H, 
             unzip_dir_train_L=config.unzip_dir_train_L, 
+            train_dir=config.train_dir
         )
 
         return data_ingestion_config

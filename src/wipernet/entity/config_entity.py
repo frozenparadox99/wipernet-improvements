@@ -11,3 +11,4 @@ class DataIngestionConfig:
     local_train_L_path: Path
     unzip_dir_train_H: Path
     unzip_dir_train_L: Path
+    train_dir: Path
