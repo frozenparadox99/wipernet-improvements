@@ -9,3 +9,7 @@ data_ingestion:
     unzip_dir_train_H: artifacts/data_ingestion/
     unzip_dir_train_L: artifacts/data_ingestion/
     train_dir: artifacts/train
+
+data_preprocessing:
+    output_dir: artifacts/preprocessed
+    train_dir: artifacts/train

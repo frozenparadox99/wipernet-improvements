@@ -2,7 +2,7 @@ from wipernet.constants import *
 import os
 from pathlib import Path
 from wipernet.utils.common import read_yaml, create_directories
-from wipernet.entity.config_entity import (DataIngestionConfig)
+from wipernet.entity.config_entity import (DataIngestionConfig, DataPreProcessingConfig)
 
 
 class ConfigurationManager:
@@ -30,6 +30,19 @@ class ConfigurationManager:
             unzip_dir_train_H=config.unzip_dir_train_H, 
             unzip_dir_train_L=config.unzip_dir_train_L, 
             train_dir=config.train_dir
+        )
+
+        return data_ingestion_config
+
+    def get_data_preprocessing_config(self) -> DataPreProcessingConfig:
+        config = self.config.data_preprocessing
+
+        data_ingestion_config = DataPreProcessingConfig(
+            output_dir=config.output_dir,
+            train_dir=config.train_dir, 
+            params_batch_size= self.params.BATCH_SIZE,
+            params_image_width= self.params.IMG_WIDTH,
+            params_image_height= self.params.IMG_HEIGHT,
         )
 
         return data_ingestion_config

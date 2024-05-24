@@ -12,3 +12,11 @@ class DataIngestionConfig:
     unzip_dir_train_H: Path
     unzip_dir_train_L: Path
     train_dir: Path
+
+@dataclass(frozen=True)
+class DataPreProcessingConfig:
+    output_dir: Path
+    train_dir: Path
+    params_batch_size: int
+    params_image_width: int
+    params_image_height: int

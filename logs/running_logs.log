@@ -222,3 +222,512 @@ x==========x]
 [2024-05-23 17:26:04,020: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2024-05-24 11:48:16,240: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:48:16,241: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:48:16,241: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:48:16,242: INFO: common: created directory at: artifacts]
+[2024-05-24 11:48:16,242: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:48:16,412: ERROR: main: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} artifacts/train/ground-truth_47.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: ]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 27, in main
+    preprocessor.save_preprocessed_images('artifacts/preprocessed')
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_preprocessing.py", line 76, in save_preprocessed_images
+    for input_image, real_image in self.train_dataset.take(1):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 810, in __next__
+    return self._next_internal()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 773, in _next_internal
+    ret = gen_dataset_ops.iterator_get_next(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/ops/gen_dataset_ops.py", line 3029, in iterator_get_next
+    _ops.raise_from_not_ok_status(e, name)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/framework/ops.py", line 5883, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.NotFoundError: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} artifacts/train/ground-truth_47.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: 
+[2024-05-24 11:50:39,286: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:50:39,287: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:50:39,288: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:50:39,288: INFO: common: created directory at: artifacts]
+[2024-05-24 11:50:39,288: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:50:39,549: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 11:50:39,936: ERROR: main: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} artifacts/train/ground-truth_1017.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: ]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 27, in main
+    preprocessor.save_preprocessed_images('artifacts/preprocessed')
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_preprocessing.py", line 77, in save_preprocessed_images
+    for input_image, real_image in self.train_dataset.take(1):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 810, in __next__
+    return self._next_internal()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 773, in _next_internal
+    ret = gen_dataset_ops.iterator_get_next(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/ops/gen_dataset_ops.py", line 3029, in iterator_get_next
+    _ops.raise_from_not_ok_status(e, name)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/framework/ops.py", line 5883, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.NotFoundError: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} artifacts/train/ground-truth_1017.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: 
+[2024-05-24 11:51:17,632: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:51:17,633: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:51:17,633: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:51:17,633: INFO: common: created directory at: artifacts]
+[2024-05-24 11:51:17,633: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:51:17,633: ERROR: main: 'DataPreProcessing' object has no attribute 'data_ingestion_config']
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 25, in main
+    preprocessor = DataPreProcessing(data_ingestion_config, config)
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_preprocessing.py", line 10, in __init__
+    logger.info(self.data_ingestion_config.train_dir)
+AttributeError: 'DataPreProcessing' object has no attribute 'data_ingestion_config'
+[2024-05-24 11:51:58,818: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:51:58,819: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:51:58,820: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:51:58,820: INFO: common: created directory at: artifacts]
+[2024-05-24 11:51:58,820: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:51:59,085: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 11:51:59,475: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 11:52:38,018: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:52:38,019: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:52:38,020: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:52:38,020: INFO: common: created directory at: artifacts]
+[2024-05-24 11:52:38,020: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:52:38,282: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 11:52:38,669: ERROR: main: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} artifacts/train/ground-truth_1530.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: ]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 27, in main
+    preprocessor.save_preprocessed_images('artifacts/preprocessed')
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_preprocessing.py", line 77, in save_preprocessed_images
+    for input_image, real_image in self.train_dataset.take(1):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 810, in __next__
+    return self._next_internal()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 773, in _next_internal
+    ret = gen_dataset_ops.iterator_get_next(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/ops/gen_dataset_ops.py", line 3029, in iterator_get_next
+    _ops.raise_from_not_ok_status(e, name)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/framework/ops.py", line 5883, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.NotFoundError: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} artifacts/train/ground-truth_1530.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: 
+[2024-05-24 11:53:16,565: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:53:16,566: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:53:16,566: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:53:16,566: INFO: common: created directory at: artifacts]
+[2024-05-24 11:53:16,566: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:53:16,821: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 11:53:17,212: ERROR: main: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} artifacts/train/ground-truth_665.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: ]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 27, in main
+    preprocessor.save_preprocessed_images('artifacts/preprocessed')
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_preprocessing.py", line 77, in save_preprocessed_images
+    for input_image, real_image in self.train_dataset.take(1):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 810, in __next__
+    return self._next_internal()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 773, in _next_internal
+    ret = gen_dataset_ops.iterator_get_next(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/ops/gen_dataset_ops.py", line 3029, in iterator_get_next
+    _ops.raise_from_not_ok_status(e, name)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/framework/ops.py", line 5883, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.NotFoundError: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} artifacts/train/ground-truth_665.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: 
+[2024-05-24 11:53:45,564: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:53:45,565: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:53:45,565: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:53:45,565: INFO: common: created directory at: artifacts]
+[2024-05-24 11:53:45,565: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:53:45,817: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 11:53:46,227: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 11:55:03,268: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:55:03,269: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:55:03,270: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:55:03,270: INFO: common: created directory at: artifacts]
+[2024-05-24 11:55:03,270: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:55:03,514: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 11:55:03,843: ERROR: main: too many values to unpack (expected 2)]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 27, in main
+    preprocessor.save_preprocessed_images('artifacts/preprocessed')
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_preprocessing.py", line 77, in save_preprocessed_images
+    for input_image, real_image in self.train_dataset.take(1):
+ValueError: too many values to unpack (expected 2)
+[2024-05-24 11:55:49,778: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:55:49,779: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:55:49,779: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:55:49,779: INFO: common: created directory at: artifacts]
+[2024-05-24 11:55:49,779: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:55:50,035: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 11:55:50,356: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 11:55:50,365: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 11:59:30,456: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 11:59:30,456: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 11:59:30,457: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 11:59:30,457: INFO: common: created directory at: artifacts]
+[2024-05-24 11:59:30,457: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 11:59:30,501: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:00:35,100: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:00:35,101: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:00:35,102: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:00:35,102: INFO: common: created directory at: artifacts]
+[2024-05-24 12:00:35,102: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:00:35,239: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:01:59,800: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:01:59,801: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:01:59,802: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:01:59,802: INFO: common: created directory at: artifacts]
+[2024-05-24 12:01:59,802: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:01:59,955: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:03:57,996: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:03:57,997: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:03:57,998: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:03:57,998: INFO: common: created directory at: artifacts]
+[2024-05-24 12:03:57,998: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:03:58,276: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:03:58,584: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 12:03:58,609: ERROR: main: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ./artifacts/train/ground-truth_1225.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: ]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 62, in main
+    for file in train_dataset:  # Print the first 10 file paths
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 810, in __next__
+    return self._next_internal()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 773, in _next_internal
+    ret = gen_dataset_ops.iterator_get_next(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/ops/gen_dataset_ops.py", line 3029, in iterator_get_next
+    _ops.raise_from_not_ok_status(e, name)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/framework/ops.py", line 5883, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.NotFoundError: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ./artifacts/train/ground-truth_1225.png; No such file or directory
+	 [[{{node ReadFile_1}}]] [Op:IteratorGetNext] name: 
+[2024-05-24 12:04:35,603: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:04:35,604: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:04:35,605: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:04:35,605: INFO: common: created directory at: artifacts]
+[2024-05-24 12:04:35,605: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:04:35,876: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:04:36,205: ERROR: main: 'numpy.ndarray' object has no attribute 'decode']
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 64, in main
+    print(file.numpy().decode('utf-8'))
+AttributeError: 'numpy.ndarray' object has no attribute 'decode'
+[2024-05-24 12:04:51,171: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:04:51,172: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:04:51,172: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:04:51,173: INFO: common: created directory at: artifacts]
+[2024-05-24 12:04:51,173: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:04:51,438: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:04:52,479: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:05:10,093: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:05:10,094: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:05:10,094: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:05:10,094: INFO: common: created directory at: artifacts]
+[2024-05-24 12:05:10,094: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:05:10,866: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:05:30,264: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:05:30,265: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:05:30,265: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:05:30,265: INFO: common: created directory at: artifacts]
+[2024-05-24 12:05:30,265: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:05:31,044: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:06:19,864: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:06:19,865: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:06:19,866: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:06:19,866: INFO: common: created directory at: artifacts]
+[2024-05-24 12:06:19,866: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:06:20,634: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:06:51,582: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:06:51,583: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:06:51,584: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:06:51,584: INFO: common: created directory at: artifacts]
+[2024-05-24 12:06:51,584: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:06:52,349: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:07:26,700: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:07:26,701: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:07:26,702: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:07:26,702: INFO: common: created directory at: artifacts]
+[2024-05-24 12:07:26,702: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:07:26,793: ERROR: main: in user code:
+
+    File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 26, in load_image_train  *
+        print(real_image_path.numpy().decode('utf-8'))
+
+    AttributeError: 'SymbolicTensor' object has no attribute 'numpy'
+]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 59, in main
+    train_dataset = train_dataset.map(load_image_train, num_parallel_calls=tf.data.AUTOTUNE)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 2280, in map
+    return map_op._map_v2(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/map_op.py", line 40, in _map_v2
+    return _ParallelMapDataset(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/map_op.py", line 148, in __init__
+    self._map_func = structured_function.StructuredFunctionWrapper(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/structured_function.py", line 265, in __init__
+    self._function = fn_factory()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 1227, in get_concrete_function
+    concrete = self._get_concrete_function_garbage_collected(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 1197, in _get_concrete_function_garbage_collected
+    self._initialize(args, kwargs, add_initializers_to=initializers)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 695, in _initialize
+    self._concrete_variable_creation_fn = tracing_compilation.trace_function(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 178, in trace_function
+    concrete_function = _maybe_define_function(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 283, in _maybe_define_function
+    concrete_function = _create_concrete_function(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 310, in _create_concrete_function
+    traced_func_graph = func_graph_module.func_graph_from_py_func(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/framework/func_graph.py", line 1059, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 598, in wrapped_fn
+    out = weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/structured_function.py", line 231, in wrapped_fn
+    ret = wrapper_helper(*args)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/data/ops/structured_function.py", line 161, in wrapper_helper
+    ret = autograph.tf_convert(self._func, ag_ctx)(*nested_args)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/autograph/impl/api.py", line 693, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/autograph/impl/api.py", line 690, in wrapper
+    return converted_call(f, args, kwargs, options=options)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/autograph/impl/api.py", line 439, in converted_call
+    result = converted_f(*effective_args, **kwargs)
+  File "/var/folders/1l/h5xg37d142b485g8nrk47d8m0000gn/T/__autograph_generated_filenrit46o9.py", line 12, in tf__load_image_train
+    ag__.ld(print)(ag__.converted_call(ag__.converted_call(ag__.ld(real_image_path).numpy, (), None, fscope).decode, ('utf-8',), None, fscope))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/tensorflow/python/framework/tensor.py", line 261, in __getattr__
+    self.__getattribute__(name)
+AttributeError: in user code:
+
+    File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 26, in load_image_train  *
+        print(real_image_path.numpy().decode('utf-8'))
+
+    AttributeError: 'SymbolicTensor' object has no attribute 'numpy'
+
+[2024-05-24 12:08:40,938: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:08:40,939: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:08:40,939: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:08:40,939: INFO: common: created directory at: artifacts]
+[2024-05-24 12:08:40,939: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:08:41,729: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:12:15,012: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:12:15,013: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:12:15,013: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:12:15,013: INFO: common: created directory at: artifacts]
+[2024-05-24 12:12:15,013: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:12:15,278: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:12:15,608: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:12:15,617: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 12:12:15,675: ERROR: main: "'ConfigBox' object has no attribute 'batch_size'"]
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 592, in __getitem__
+    return super().__getitem__(item)
+KeyError: 'BATCH_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 631, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 619, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'BATCH_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 633, in __getattr__
+    value = object.__getattribute__(self, item)
+AttributeError: 'ConfigBox' object has no attribute 'BATCH_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/config_box.py", line 29, in __getattr__
+    return super().__getattr__(item)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 647, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'BATCH_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 592, in __getitem__
+    return super().__getitem__(item)
+KeyError: 'batch_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 631, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 619, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'batch_size'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 633, in __getattr__
+    value = object.__getattribute__(self, item)
+AttributeError: 'ConfigBox' object has no attribute 'batch_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 9, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 24, in main
+    preprocessor.preprocess()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_preprocessing.py", line 45, in preprocess
+    self.train_dataset = self.train_dataset.batch(self.config.params.BATCH_SIZE)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/config_box.py", line 31, in __getattr__
+    return super().__getattr__(item.lower())
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/box/box.py", line 647, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'batch_size'"
+[2024-05-24 12:12:43,099: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:12:43,100: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:12:43,100: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:12:43,101: INFO: common: created directory at: artifacts]
+[2024-05-24 12:12:43,101: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:12:43,369: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:12:43,689: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:12:43,697: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 12:12:43,813: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:13:25,723: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:13:25,724: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:13:25,724: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:13:25,724: INFO: common: created directory at: artifacts]
+[2024-05-24 12:13:25,724: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:13:25,997: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:13:26,319: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:13:26,327: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 12:13:26,654: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:13:40,037: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:13:40,038: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:13:40,038: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:13:40,038: INFO: common: created directory at: artifacts]
+[2024-05-24 12:13:40,038: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:13:40,306: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:13:40,625: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:13:40,633: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 12:13:43,014: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:14:23,563: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:14:23,564: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:14:23,564: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:14:23,564: INFO: common: created directory at: artifacts]
+[2024-05-24 12:14:23,564: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:14:23,833: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:14:24,161: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:14:24,170: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 12:14:24,491: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:14:35,730: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:14:35,731: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:14:35,731: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:14:35,732: INFO: common: created directory at: artifacts]
+[2024-05-24 12:14:35,732: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:14:35,999: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:14:36,320: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:14:36,329: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 12:14:36,662: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 12:15:18,706: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-24 12:15:18,707: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 12:15:18,708: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 12:15:18,708: INFO: common: created directory at: artifacts]
+[2024-05-24 12:15:18,708: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 12:15:18,971: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:15:19,293: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 12:15:19,301: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 12:16:10,156: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 13:15:55,600: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-24 13:15:55,602: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 13:15:55,602: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 13:15:55,602: INFO: common: created directory at: artifacts]
+[2024-05-24 13:15:55,602: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 13:15:55,602: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 13:15:55,602: INFO: main: >>>>>> stage Data pre-processing stage started <<<<<<]
+[2024-05-24 13:15:55,603: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 13:15:55,603: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 13:15:55,603: INFO: common: created directory at: artifacts]
+[2024-05-24 13:15:55,603: ERROR: main: DataIngestionConfig.__init__() got an unexpected keyword argument 'output_dir']
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 20, in <module>
+    preprocessor.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_02_data_preprocessing.py", line 15, in main
+    data_preprocessing_config = config.get_data_preprocessing_config()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/config/configuration.py", line 40, in get_data_preprocessing_config
+    data_ingestion_config = DataIngestionConfig(
+TypeError: DataIngestionConfig.__init__() got an unexpected keyword argument 'output_dir'
+[2024-05-24 13:16:56,214: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-24 13:16:56,215: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 13:16:56,216: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 13:16:56,216: INFO: common: created directory at: artifacts]
+[2024-05-24 13:16:56,216: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-24 13:16:56,216: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-24 13:16:56,216: INFO: main: >>>>>> stage Data pre-processing stage started <<<<<<]
+[2024-05-24 13:16:56,216: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-24 13:16:56,217: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-24 13:16:56,217: INFO: common: created directory at: artifacts]
+[2024-05-24 13:16:56,479: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 13:16:56,788: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-24 13:16:56,796: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-24 13:17:46,259: INFO: main: >>>>>> stage Data pre-processing stage completed <<<<<<
+
+x==========x]
