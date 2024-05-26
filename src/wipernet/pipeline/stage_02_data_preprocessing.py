@@ -1,6 +1,7 @@
 from wipernet.components.data_preprocessing import DataPreProcessing
 from wipernet.config.configuration import ConfigurationManager
 from wipernet.components.data_ingestion import DataIngestion
+from wipernet.components.GAN import GAN
 from wipernet import logger
 
 
@@ -16,7 +17,10 @@ class DataPreProcessingPipeline:
 
         preprocessor = DataPreProcessing(data_preprocessing_config)
         preprocessor.preprocess()
-        preprocessor.save_preprocessed_images()
+        # preprocessor.save_preprocessed_images()
+        gan = GAN(epochs=3, path='./', mode='train', output_path='artifacts/output')
+        gan.fit(preprocessor.train_dataset, 3)
+        
 
 
 if __name__ == '__main__':
