@@ -38,14 +38,14 @@ class DataIngestion:
         with zipfile.ZipFile(config_file, 'r') as zip_ref:
             zip_ref.extractall(unzip_path)
 
-    def combine_directories(self):
-        if not os.path.exists(self.config.train_dir):
-            os.makedirs(self.config.train_dir, exist_ok=True)
+    def combine_directories(self, images_dir, main_dir):
+        if not os.path.exists(images_dir):
+            os.makedirs(images_dir, exist_ok=True)
         ground_truth_counter = 1
         degraded_counter = 1
         
         
-        for root, dirs, files in os.walk(self.config.root_dir):
+        for root, dirs, files in os.walk(main_dir):
             for sub_dir in dirs:
                 image_pairs = {}
                 sub_dir_path = os.path.join(root, sub_dir)
@@ -62,13 +62,13 @@ class DataIngestion:
                     if 'norain' in paths:
                         dest_file_name = f"ground_truth_{ground_truth_counter}.png"
                         ground_truth_counter += 1
-                        dest_file_path = os.path.join(self.config.train_dir, dest_file_name)
+                        dest_file_path = os.path.join(images_dir, dest_file_name)
                         shutil.copy(paths['norain'], dest_file_path)
 
                     if 'rain' in paths:
                         dest_file_name = f"degraded_{degraded_counter}.png"
                         degraded_counter += 1
-                        dest_file_path = os.path.join(self.config.train_dir, dest_file_name)
+                        dest_file_path = os.path.join(images_dir, dest_file_name)
                         shutil.copy(paths['rain'], dest_file_path)
 
 

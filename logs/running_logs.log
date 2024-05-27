@@ -801,3 +801,64 @@ x==========x]
 [2024-05-26 13:19:21,758: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
 [2024-05-26 13:19:22,719: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
 [2024-05-26 13:19:22,721: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-27 12:43:00,932: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-27 12:43:00,934: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-27 12:43:00,934: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-27 12:43:00,935: INFO: common: created directory at: artifacts]
+[2024-05-27 12:43:00,935: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-27 12:43:04,717: ERROR: main: [Errno 2] No such file or directory: 'artifacts/data_ingestion_test/RainH.zip']
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 10, in <module>
+    data_ingestion.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_01_data_ingestion.py", line 18, in main
+    data_ingestion.download_file(data_ingestion_config.test_rain_H_URL, data_ingestion_config.local_test_H_path)
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/data_ingestion.py", line 20, in download_file
+    filename, headers = request.urlretrieve(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/urllib/request.py", line 251, in urlretrieve
+    tfp = open(filename, 'wb')
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion_test/RainH.zip'
+[2024-05-27 12:44:49,670: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-27 12:44:49,672: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-27 12:44:49,673: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-27 12:44:49,673: INFO: common: created directory at: artifacts]
+[2024-05-27 12:44:49,673: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-27 12:44:49,673: INFO: common: created directory at: artifacts/data_ingestion_test/]
+[2024-05-27 12:47:41,677: INFO: data_ingestion: artifacts/data_ingestion_test/RainH.zip download! with following info: 
+Date: Mon, 27 May 2024 16:44:47 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Tue, 05 Dec 2017 14:17:12 GMT
+ETag: "3c91367-55f987db16a00"
+Accept-Ranges: bytes
+Content-Length: 63509351
+Content-Type: application/zip
+Connection: close
+
+]
+[2024-05-27 12:48:26,723: INFO: data_ingestion: artifacts/data_ingestion_test/RainL.zip download! with following info: 
+Date: Mon, 27 May 2024 16:47:39 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Tue, 05 Dec 2017 14:17:18 GMT
+ETag: "37c9d7e-55f987e0cf780"
+Accept-Ranges: bytes
+Content-Length: 58498430
+Content-Type: application/zip
+Connection: close
+
+]
+[2024-05-27 12:48:27,187: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-27 12:55:46,473: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-27 12:55:46,475: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-27 12:55:46,475: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-27 12:55:46,475: INFO: common: created directory at: artifacts]
+[2024-05-27 12:55:46,475: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-27 12:55:46,475: INFO: common: created directory at: artifacts/data_ingestion_test/]
+[2024-05-27 12:55:46,702: INFO: data_ingestion: Processed 200 ground truth images and 200 degraded images.]
+[2024-05-27 12:55:46,702: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
