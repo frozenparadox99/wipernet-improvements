@@ -1,6 +1,7 @@
 import tensorflow as tf
 from keras.layers import Input, concatenate, Conv2D, LeakyReLU, BatchNormalization, ZeroPadding2D
 from keras.models import Model, Sequential
+from keras.losses import BinaryCrossentropy
 
 class Discriminator1:
 
@@ -39,7 +40,7 @@ class Discriminator1:
                                   gamma_initializer=tf.random_normal_initializer(1.0, 0.02))(tensor)
 
     def discriminator_loss(self, disc_real_output, disc_generated_output):
-        loss_object = tf.keras.losses.BinaryCrossentropy(from_logits=True)
+        loss_object = BinaryCrossentropy(from_logits=True)
         real_loss = loss_object(tf.ones_like(disc_real_output), disc_real_output)
         generated_loss = loss_object(tf.zeros_like(disc_generated_output), disc_generated_output)
         total_disc_loss = real_loss + generated_loss

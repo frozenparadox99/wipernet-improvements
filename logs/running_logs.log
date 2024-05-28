@@ -862,3 +862,129 @@ x==========x]
 [2024-05-27 12:55:46,702: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
 
 x==========x]
+[2024-05-28 15:34:40,989: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-28 15:34:40,991: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:34:40,992: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:34:40,992: INFO: common: created directory at: artifacts]
+[2024-05-28 15:34:40,992: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-28 15:34:40,992: INFO: common: created directory at: artifacts/data_ingestion_test/]
+[2024-05-28 15:34:40,992: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-28 15:35:03,552: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-28 15:35:03,554: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:35:03,554: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:35:03,555: INFO: common: created directory at: artifacts]
+[2024-05-28 15:35:03,555: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-28 15:35:03,555: INFO: common: created directory at: artifacts/data_ingestion_test/]
+[2024-05-28 15:35:03,555: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-28 15:35:03,555: INFO: main: >>>>>> stage Data pre-processing stage started <<<<<<]
+[2024-05-28 15:35:03,556: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:35:03,556: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:35:03,556: INFO: common: created directory at: artifacts]
+[2024-05-28 15:35:03,835: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:35:04,113: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:35:04,121: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:35:04,197: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:35:04,204: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:35:04,212: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:35:05,066: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:35:05,069: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:35:10,169: ERROR: main: Input 0 of layer "model_1" is incompatible with the layer: expected shape=(None, 256, 256, 3), found shape=(1, 360, 640, 3)]
+Traceback (most recent call last):
+  File "/Users/sushant/Desktop/WiperNet/main.py", line 20, in <module>
+    preprocessor.main()
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/pipeline/stage_02_data_preprocessing.py", line 22, in main
+    gan.fit(preprocessor.train_dataset, 3, preprocessor.test_dataset)
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/GAN.py", line 111, in fit
+    self.generate_images(example_input, example_target, img_save)
+  File "/Users/sushant/Desktop/WiperNet/src/wipernet/components/GAN.py", line 53, in generate_images
+    derained = self.generator1(test_input, training=True)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/shetty/lib/python3.10/site-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+    raise ValueError(
+ValueError: Input 0 of layer "model_1" is incompatible with the layer: expected shape=(None, 256, 256, 3), found shape=(1, 360, 640, 3)
+[2024-05-28 15:36:12,193: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-28 15:36:12,194: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:36:12,195: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:36:12,195: INFO: common: created directory at: artifacts]
+[2024-05-28 15:36:12,195: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-28 15:36:12,195: INFO: common: created directory at: artifacts/data_ingestion_test/]
+[2024-05-28 15:36:12,195: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-28 15:36:12,195: INFO: main: >>>>>> stage Data pre-processing stage started <<<<<<]
+[2024-05-28 15:36:12,196: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:36:12,196: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:36:12,196: INFO: common: created directory at: artifacts]
+[2024-05-28 15:36:12,460: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:36:12,826: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:36:12,835: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:36:12,915: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:36:12,922: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:36:12,930: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:36:13,780: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:36:13,782: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:40:17,339: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-28 15:40:17,341: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:40:17,342: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:40:17,342: INFO: common: created directory at: artifacts]
+[2024-05-28 15:40:17,342: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-28 15:40:17,342: INFO: common: created directory at: artifacts/data_ingestion_test/]
+[2024-05-28 15:40:17,342: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-28 15:40:17,342: INFO: main: >>>>>> stage Data pre-processing stage started <<<<<<]
+[2024-05-28 15:40:17,343: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:40:17,344: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:40:17,344: INFO: common: created directory at: artifacts]
+[2024-05-28 15:40:17,614: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:40:17,937: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:40:17,945: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:40:18,024: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:40:18,032: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:40:18,039: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:40:18,905: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:40:18,907: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:42:11,108: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-28 15:42:11,110: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:42:11,110: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:42:11,110: INFO: common: created directory at: artifacts]
+[2024-05-28 15:42:11,111: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-28 15:42:11,111: INFO: common: created directory at: artifacts/data_ingestion_test/]
+[2024-05-28 15:42:11,111: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-28 15:42:11,111: INFO: main: >>>>>> stage Data pre-processing stage started <<<<<<]
+[2024-05-28 15:42:11,112: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:42:11,112: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:42:11,112: INFO: common: created directory at: artifacts]
+[2024-05-28 15:42:11,374: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:42:11,656: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:42:11,664: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:42:12,524: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:42:12,526: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:51:53,466: INFO: main: >>>>>> stage Data ingestion stage started <<<<<<]
+[2024-05-28 15:51:53,468: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:51:53,468: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:51:53,468: INFO: common: created directory at: artifacts]
+[2024-05-28 15:51:53,468: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-28 15:51:53,468: INFO: common: created directory at: artifacts/data_ingestion_test/]
+[2024-05-28 15:51:53,468: INFO: main: >>>>>> stage Data ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-28 15:51:53,469: INFO: main: >>>>>> stage Data pre-processing stage started <<<<<<]
+[2024-05-28 15:51:53,470: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-05-28 15:51:53,470: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-28 15:51:53,470: INFO: common: created directory at: artifacts]
+[2024-05-28 15:51:53,742: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:51:54,020: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:51:54,028: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:51:54,105: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:51:54,112: INFO: api: Tensor("args_0:0", shape=(), dtype=string)]
+[2024-05-28 15:51:54,120: INFO: api: Tensor("StaticRegexReplace:0", shape=(), dtype=string)]
+[2024-05-28 15:51:55,013: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]
+[2024-05-28 15:51:55,015: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.Adam` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.Adam`.]

@@ -7,6 +7,7 @@ from pathlib import Path
 class DataPreProcessing:
     def __init__(self, config: DataPreProcessingConfig):
         self.train_dataset = tf.data.Dataset.list_files(config.train_dir+ '/*.png')
+        self.test_dataset = tf.data.Dataset.list_files(config.test_dir+ '/*.png')
         self.config = config
 
     def load(self, image_path):
@@ -35,12 +36,33 @@ class DataPreProcessing:
         input_image, real_image = self.normalize(input_image, real_image)
 
         return input_image, real_image
+    
+    def load_image_test(self, image_file):
+        logger.info(image_file)
+        # Load degraded image
+        input_image = self.load(image_file)
+
+        # Construct ground-truth image path
+        real_image_path = tf.strings.regex_replace(image_file, 'degraded', 'ground_truth')
+
+        # Load ground-truth image
+        real_image = self.load(real_image_path)
+
+        # Apply augmentations
+        input_image, real_image = self.resize(input_image, real_image, self.config.params_image_height, self.config.params_image_width)
+        input_image, real_image = self.normalize(input_image, real_image)
+
+        return input_image, real_image
 
     def preprocess(self):
         self.train_dataset = self.train_dataset.filter(self.filter_degraded_images)
         self.train_dataset = self.train_dataset.map(self.load_image_train, num_parallel_calls=tf.data.AUTOTUNE)
         self.train_dataset = self.train_dataset.shuffle(1)
         self.train_dataset = self.train_dataset.batch(self.config.params_batch_size)
+
+        self.test_dataset = self.test_dataset.filter(self.filter_degraded_images)
+        self.test_dataset = self.test_dataset.map(self.load_image_test, num_parallel_calls=tf.data.AUTOTUNE)
+        self.test_dataset = self.test_dataset.batch(self.config.params_batch_size)
 
     def resize(self, input_image, real_image, height, width):
         input_image = tf.image.resize(input_image, [height, width], method=tf.image.ResizeMethod.BILINEAR)
@@ -71,13 +93,24 @@ class DataPreProcessing:
 
     def save_preprocessed_images(self):
         output_dir = self.config.output_dir
+        test_output_dir = 'artifacts/preprocessed-test'
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
+        if not os.path.exists(test_output_dir):
+            os.makedirs(test_output_dir)
 
         for input_image, real_image in self.train_dataset.take(1):
             for i in range(len(input_image)):
                 input_image_path = os.path.join(output_dir, f'degraded_{i}.png')
                 real_image_path = os.path.join(output_dir, f'ground_truth_{i}.png')
+
+                tf.io.write_file(input_image_path, tf.image.encode_png(tf.cast((input_image[i] + 1) * 127.5, tf.uint8)))
+                tf.io.write_file(real_image_path, tf.image.encode_png(tf.cast((real_image[i] + 1) * 127.5, tf.uint8)))
+        
+        for input_image, real_image in self.test_dataset.take(1):
+            for i in range(len(input_image)):
+                input_image_path = os.path.join(test_output_dir, f'degraded_{i}.png')
+                real_image_path = os.path.join(test_output_dir, f'ground_truth_{i}.png')
 
                 tf.io.write_file(input_image_path, tf.image.encode_png(tf.cast((input_image[i] + 1) * 127.5, tf.uint8)))
                 tf.io.write_file(real_image_path, tf.image.encode_png(tf.cast((real_image[i] + 1) * 127.5, tf.uint8)))

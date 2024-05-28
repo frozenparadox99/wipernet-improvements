@@ -19,7 +19,8 @@ class DataPreProcessingPipeline:
         preprocessor.preprocess()
         # preprocessor.save_preprocessed_images()
         gan = GAN(epochs=3, path='./', mode='train', output_path='artifacts/output')
-        gan.fit(preprocessor.train_dataset, 3)
+        # gan.fit(preprocessor.train_dataset, 3)
+        gan.fit(preprocessor.train_dataset, 3, preprocessor.test_dataset)
         
 
 

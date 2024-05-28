@@ -23,7 +23,7 @@ class DataIngestionTrainingPipeline:
         # data_ingestion.extract_zip_file(data_ingestion_config.unzip_dir_test_L, data_ingestion_config.local_test_L_path)
         
         # data_ingestion.combine_directories(data_ingestion_config.train_dir, data_ingestion_config.root_dir)
-        data_ingestion.combine_directories(data_ingestion_config.test_dir, data_ingestion_config.unzip_dir_test_H)
+        # data_ingestion.combine_directories(data_ingestion_config.test_dir, data_ingestion_config.unzip_dir_test_H)
 
 
 

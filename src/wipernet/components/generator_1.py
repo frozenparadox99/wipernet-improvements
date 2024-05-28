@@ -1,9 +1,11 @@
 import tensorflow as tf
 from keras.layers import Input, Conv2D, Conv2DTranspose, DepthwiseConv2D, Add, Concatenate, GlobalAveragePooling2D, GlobalMaxPool2D, Dense, Reshape, Activation
 from keras.models import Model
+from keras.applications import VGG19, vgg19
+from keras.losses import BinaryCrossentropy
 
 # Initialize VGG model for perceptual loss
-vgg = tf.keras.applications.VGG19(include_top=False, weights='imagenet')
+vgg = VGG19(include_top=False, weights='imagenet')
 vgg.trainable = False
 
 selected_layers = [
@@ -14,7 +16,7 @@ selected_layers = [
 ]
 weightss = [1.0/32, 1.0/16, 1.0/8, 1.0/4]
 outputs = [vgg.get_layer(name).output for name in selected_layers]
-vgg_model = tf.keras.Model([vgg.input], outputs)
+vgg_model = Model([vgg.input], outputs)
 
 class Generator_1:
     def __init__(self, mode='train'):
@@ -23,7 +25,7 @@ class Generator_1:
         print('=' * 50)
         print('input shape ::: ', self.inputs.shape)
         self.generator = self.build_generator()
-        self.loss_object = tf.keras.losses.BinaryCrossentropy(from_logits=True)
+        self.loss_object = BinaryCrossentropy(from_logits=True)
 
     def Channel_Attention(self, inputs, in_channels):
         AvgPool_xCat = GlobalAveragePooling2D()(inputs)
@@ -59,9 +61,9 @@ class Generator_1:
         l1_loss = tf.reduce_mean(tf.abs(target - gen_output))
         gen_loss_Edge = tf.reduce_mean(tf.abs(tf.image.sobel_edges(gen_output) - tf.image.sobel_edges(target)))
         SSIM_loss = 1 - tf.reduce_mean(tf.image.ssim(gen_output, target, max_val=1, filter_size=11, filter_sigma=1.5, k1=0.01, k2=0.03))
-        vgg_gen_output = vgg_model(tf.keras.applications.vgg19.preprocess_input(gen_output * 255.0))
-        vgg_target = vgg_model(tf.keras.applications.vgg19.preprocess_input(target * 255.0))
-        vgg_input = vgg_model(tf.keras.applications.vgg19.preprocess_input(input_image * 255.0))
+        vgg_gen_output = vgg_model(vgg19.preprocess_input(gen_output * 255.0))
+        vgg_target = vgg_model(vgg19.preprocess_input(target * 255.0))
+        vgg_input = vgg_model(vgg19.preprocess_input(input_image * 255.0))
 
         perceptual_loss_out = 0
         perceptual_loss_comp = 0

@@ -97,8 +97,8 @@ class GAN(object):
 
         return outputs
 
-    # def fit(self, train_ds, epochs, test_ds):
-    def fit(self, train_ds, epochs):
+    def fit(self, train_ds, epochs, test_ds):
+    # def fit(self, train_ds, epochs):
         for epoch in range(self.epochs):
             start = time.time()
             print(f"Checking for Epoch {epoch}")
@@ -107,9 +107,9 @@ class GAN(object):
             for n, (input_image, target) in tqdm(train_ds.enumerate()):
                 outputs = self.train_step(input_image, target, epoch)
                 if n % 10 == 0:
-                    # for k, (example_input, example_target) in tqdm(test_ds.take(5).enumerate()):
-                    #     self.generate_images(example_input, example_target, img_save)
-                    #     img_save += 1
+                    for k, (example_input, example_target) in tqdm(test_ds.take(5).enumerate()):
+                        self.generate_images(example_input, example_target, img_save)
+                        img_save += 1
                     print('=' * 50)
                     print(f'[!] gen1_total_loss :: {outputs["gen1_total_loss"]}')
                     print(f'[!] gen1_gan_loss :: {outputs["gen1_gan_loss"]}')
